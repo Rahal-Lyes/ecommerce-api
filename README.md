@@ -112,3 +112,32 @@ pip install pytest
 pip install pytest-django
 
 ```
+
+## Python Black Configuration
+
+```bash
+pip install black
+
+toch vscode
+cd vscode
+touch settings.json
+nano settings.json
+```
+
+```json
+{
+  "editor.formatOnSave": true,
+  "python.formatting.provider": "black",
+  "python.formatting.blackArgs": [
+    "--line-length",
+    "79"
+  ]
+
+  "[python]":{
+    "editor.codeActionOnSave":{
+      "source.organizeImports": true
+    }
+  }
+}
+
+```
