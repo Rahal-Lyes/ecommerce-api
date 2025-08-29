@@ -56,9 +56,11 @@ ALLOWED_HOSTS = ['*']
 ```
 ------------------------------------------------------------------------
 ### generate secret key
+```
 - python3 manage.py shell
 - from django.core.management.utils import get_random_secret_key
 - print(get_random_secret_key())
+```
 - paste this code into secret_key inside ssettings
 
 ------------------------------------------------------------------------
