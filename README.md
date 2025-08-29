@@ -1,2 +1,69 @@
 # ecommerce-api
-python django rest framework
+
+## First-step:
+
+**Create environment variable**
+
+``` bash
+python -m venv venv
+source venv/bin/activate   # ~~activate~~
+```
+
+**Install Django**
+
+``` bash
+pip install --upgrade pip   # upgrade pip
+pip install django
+```
+
+**Create main project**
+
+``` bash
+django-admin startproject ecommerce_main .
+```
+
+------------------------------------------------------------------------
+
+## Second-step:
+
+-   Créer un dossier `settings`
+-   Déplacer `settings.py` dans `settings` et renommer vers `base.py`
+-   Créer un fichier `development.py` et `production.py`
+
+------------------------------------------------------------------------
+
+### development.py
+
+``` python
+from .base import *
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
+```
+
+------------------------------------------------------------------------
+
+### production.py
+
+``` python
+from .base import *
+
+ALLOWED_HOSTS = ['*']
+```
+------------------------------------------------------------------------
+### generate secret key
+- python3 manage.py shell
+- from django.core.management.utils import get_random_secret_key
+- print(get_random_secret_key())
+- paste this code into secret_key inside ssettings
+
+------------------------------------------------------------------------
+### list installed packages
+```
+- pip freeze > requirements.txt
+- pip install -r requirements.txt -->  * load requirement*
+```
