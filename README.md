@@ -65,7 +65,25 @@ ALLOWED_HOSTS = ['*']
 
 ------------------------------------------------------------------------
 ### list installed packages
+``` bash
+pip freeze > requirements.txt
+pip install -r requirements.txt -->  * load requirement*
 ```
-- pip freeze > requirements.txt
-- pip install -r requirements.txt -->  * load requirement*
+------------------------------------------------------------------------
+
+### configuring environment variable
+``` bash
+pip install python-dotenv   # env
+
 ```
+- ./project_main
+- touch .env
+- settings.py
+
+``` bash
+from dotenv import load_dotenv
+import os
+load_dotenv(BASE_DIR / ".env")
+SECRET_KEY = os.environ.get("SECRET_KEY")
+
+ ```  
