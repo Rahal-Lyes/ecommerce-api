@@ -20,4 +20,10 @@ rad.json
 *.flf
 #Test results file
 TestResults.xml
-/venv
+venv/
+.env
+.pytest_cache/
+**__pycache__/
+db.sqlite
+.coverage]
+.vscode
